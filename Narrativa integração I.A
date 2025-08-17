@@ -1,0 +1,46 @@
+Backend pré-material
+Criar const com apiKey
+Função p aquisição (sendMessage)
+onclick no botão de input "sendMessage"
+var message com get element com id do input
+if message vazia borda vermelha e return
+else border none
+id status (pegar element innerHtml com carregando)
+var botao com get element id botao do input
+botao disabled = true
+style cursor 'not-allowed' 
+message disabled = true
+//integração da i.a
+fetch ("https://api.openai.com/v1/completions")
+method: 'POST'
+headers: {
+Accept: "application/json",
+Authorization: 'Bearer ${apiKey}'
+}
+body: JSON.stringify({
+model:'text-davinci-003',
+prompt: message.value,
+max_tokens: 2048,
+temperature: 0.5
+}
+.then(response) -> response JSON
+response -> console.log(response) //pegar o caminho no console
+.catch (e) -> console.log('error -> ', e)
+.finally {
+btn disabled false
+not-allowed -> pointer
+disabled message false
+}
+//REVER ----------------------------------------------------------------------------------
+//FUNÇÃO HISTORICO
+function historico (message, responde)
+var historico getelement c/ elemento do historico (fazer card)
+
+var boxMyMessage get element div
+boxMyMessage classname 'box-my-message'
+
+var myMessage  create element '<p>'
+myMessage classname 'my-message'
+innerHtml = message
+boxMyMessage.appendChild(myMessage)
+historico.appendChild(boxMyMessage)
